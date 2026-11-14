@@ -181,6 +181,14 @@ a {
   font-size: 1.05rem;
 }
 
+.logo-image {
+  width: 2.35rem;
+  height: 2.35rem;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+}
+
 .logo-badge {
   font-size: 0.7rem;
   background-color: var(--marine-clair);
@@ -299,6 +307,7 @@ a {
 .hero-image {
   width: 100%;
   height: auto;
+  max-height: 360px;
   display: block;
   object-fit: cover;
   transition: transform 0.3s ease;
