@@ -1,1112 +1,269 @@
 /* ==========================================================================
-   CHARTE DE COULEURS STRICTE - ProfÉclair
+   ProfÉclair - Feuille de style (mobile d'abord)
+   Charte : marine #173A63, terracotta #B66F4C, crème #F0E4D0, blanc
    ========================================================================== */
 :root {
-  /* Bleu marine profond & déclinaisons */
   --marine: #173A63;
   --marine-fonce: #0E2644;
   --marine-noir: #0A1B31;
   --marine-clair: #24507F;
   --bleu-lumiere: #3A6EA5;
-
-  /* Terracotta / orange cuivré & déclinaisons */
   --terracotta: #B66F4C;
   --terracotta-clair: #D08A63;
   --terracotta-fonce: #8E5236;
   --cuivre-lumineux: #E3A27C;
-
-  /* Beige crème & déclinaisons */
   --beige: #F0E4D0;
   --beige-fonce: #E2D1B5;
   --beige-clair: #FAF6F0;
-
-  /* Neutres */
   --blanc: #FFFFFF;
+  --texte-doux: #3D5674;
   --bordure-legere: rgba(23, 58, 99, 0.12);
   --bordure-marine: rgba(240, 228, 208, 0.2);
-
-  /* Rayons et ombres */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 18px;
   --ombre: 0 4px 15px rgba(10, 27, 49, 0.08);
-  --ombre-profonde: 0 10px 25px rgba(10, 27, 49, 0.15);
-
-  --police: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --ombre-profonde: 0 14px 34px rgba(10, 27, 49, 0.18);
+  --police: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --police-titre: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
 }
 
-/* ==========================================================================
-   RESET & BASE (MOBILE-FIRST)
-   ========================================================================== */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
 
 body {
   font-family: var(--police);
   color: var(--marine);
-  background-color: var(--blanc);
+  background: var(--blanc);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-img, svg {
-  display: block;
-  max-width: 100%;
-}
+img, svg { display: block; max-width: 100%; }
+img { height: auto; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+[hidden] { display: none !important; }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+:focus-visible { outline: 3px solid var(--cuivre-lumineux); outline-offset: 2px; }
 
-.container {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1.25rem;
-}
+.container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
 
-/* ==========================================================================
-   BOUTONS & ELEMENTS D'ACCENT
-   ========================================================================== */
+h1, h2, h3 { font-family: var(--police-titre); letter-spacing: -0.02em; line-height: 1.15; }
+
+/* ---------- Boutons ---------- */
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  font-family: var(--police);
-  font-size: 1.05rem;
-  font-weight: 700;
-  padding: 0.9rem 1.6rem;
-  border-radius: var(--radius-md);
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-align: center;
-  width: 100%;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+  font-family: var(--police); font-size: 1.02rem; font-weight: 700;
+  padding: 0.9rem 1.5rem; border-radius: var(--radius-md); border: 2px solid transparent;
+  cursor: pointer; text-align: center; width: 100%;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
 }
+.btn:disabled { opacity: 0.7; cursor: wait; }
+.btn-terracotta { background: var(--terracotta-fonce); color: var(--blanc); box-shadow: 0 6px 16px rgba(142, 82, 54, 0.35); }
+.btn-terracotta { background: linear-gradient(180deg, #A9623F 0%, var(--terracotta-fonce) 100%); }
+.btn-terracotta:hover { transform: translateY(-2px); }
+.btn-secondaire-marine { background: transparent; border-color: var(--marine); color: var(--marine); }
+.btn-secondaire-marine:hover { background: var(--marine); color: var(--blanc); }
+.btn-secondaire-beige { background: transparent; border-color: rgba(240, 228, 208, 0.55); color: var(--beige); }
+.btn-secondaire-beige:hover { background: var(--beige); color: var(--marine); }
+.btn-whatsapp { background: var(--marine); color: var(--blanc); }
+.btn-whatsapp:hover { background: var(--marine-fonce); }
+.btn-large { width: 100%; }
+@media (min-width: 600px) { .btn { width: auto; } .btn-large { width: 100%; } }
 
-@media (min-width: 600px) {
-  .btn {
-    width: auto;
-  }
+/* ---------- En-tête ---------- */
+.header { background: var(--marine); border-bottom: 1px solid var(--bordure-marine); position: sticky; top: 0; z-index: 100; }
+.header-content { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: 4rem; }
+.logo { display: flex; align-items: center; gap: 0.55rem; font-family: var(--police-titre); font-size: 1.3rem; font-weight: 800; color: var(--blanc); }
+.logo-image { width: 2.35rem; height: 2.35rem; border-radius: 50%; }
+.logo-badge { font-family: var(--police); font-size: 0.68rem; background: var(--marine-clair); color: var(--beige); padding: 0.15rem 0.5rem; border-radius: 999px; font-weight: 600; }
+.header-nav { display: none; gap: 1.75rem; font-size: 0.95rem; font-weight: 500; color: var(--beige); }
+.header-nav a:hover { color: var(--blanc); text-decoration: underline; text-underline-offset: 6px; }
+.header-nav-btn { width: auto; padding: 0.5rem 0.95rem; font-size: 0.9rem; box-shadow: none; }
+@media (min-width: 900px) { .header-nav { display: flex; } }
+
+/* ---------- Accueil (photo en arrière-plan) ---------- */
+.hero { position: relative; overflow: hidden; color: var(--blanc); background: var(--marine-fonce); padding: 2.25rem 0 2.75rem; isolation: isolate; }
+.hero-fond { position: absolute; inset: 0; z-index: -2; }
+.hero-fond img { width: 100%; height: 100%; object-fit: cover; object-position: 22% 30%; }
+.hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(14, 38, 68, 0.90) 0%, rgba(14, 38, 68, 0.93) 55%, rgba(10, 27, 49, 0.97) 100%);
 }
-
-/* Bouton principal Terracotta (Texte blanc en gras) */
-.btn-terracotta {
-  background-color: var(--terracotta);
-  color: var(--blanc);
-  box-shadow: 0 4px 12px rgba(182, 111, 76, 0.35);
-}
-
-.btn-terracotta:hover {
-  background-color: var(--terracotta-fonce);
-  transform: translateY(-2px);
-}
-
-.btn-terracotta:active {
-  transform: translateY(0);
-}
-
-/* Bouton secondaire sur fond clair (Bordure marine) */
-.btn-secondaire-marine {
-  background-color: transparent;
-  border-color: var(--marine);
-  color: var(--marine);
-}
-
-.btn-secondaire-marine:hover {
-  background-color: var(--marine);
-  color: var(--blanc);
-}
-
-/* Bouton secondaire sur fond marine */
-.btn-secondaire-beige {
-  background-color: transparent;
-  border-color: var(--beige-fonce);
-  color: var(--beige);
-}
-
-.btn-secondaire-beige:hover {
-  background-color: var(--beige);
-  color: var(--marine);
-}
-
-/* ==========================================================================
-   EN-TÊTE (HEADER)
-   ========================================================================== */
-.header {
-  background-color: var(--marine);
-  border-bottom: 1px solid var(--bordure-marine);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.header-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 4.25rem;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: var(--blanc);
-  letter-spacing: -0.02em;
-}
-
-.logo-icone {
-  width: 2.2rem;
-  height: 2.2rem;
-  background-color: var(--terracotta);
-  color: var(--blanc);
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-  font-size: 1.05rem;
-}
-
-.logo-image {
-  width: 2.35rem;
-  height: 2.35rem;
-  object-fit: contain;
-  border-radius: 50%;
-  display: block;
-}
-
-.logo-badge {
-  font-size: 0.7rem;
-  background-color: var(--marine-clair);
-  color: var(--beige);
-  padding: 0.15rem 0.5rem;
-  border-radius: 999px;
-  font-weight: 600;
-  margin-left: 0.25rem;
-}
-
-.header-nav-btn {
-  padding: 0.55rem 1.15rem;
-  font-size: 0.92rem;
-}
-
-/* ==========================================================================
-   SECTION HERO (FOND BLEU MARINE PROFOND AVEC IMAGE)
-   ========================================================================== */
-.hero {
-  background: linear-gradient(180deg, var(--marine) 0%, var(--marine-fonce) 100%);
-  color: var(--blanc);
-  padding: 3rem 0 4rem 0;
-  position: relative;
-}
-
-.hero-grille {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-}
-
+.hero-contenu { position: relative; }
+.hero-title { font-size: clamp(1.9rem, 7.2vw, 3.5rem); font-weight: 800; line-height: 1.08; margin-bottom: 0.9rem; max-width: 15em; text-wrap: balance; }
+.hero-title .mot-cle { color: var(--cuivre-lumineux); }
+.hero-description { font-size: 1.05rem; color: var(--beige); margin-bottom: 1.4rem; max-width: 32rem; }
+.hero-cta-zone { display: flex; flex-direction: column; gap: 0.75rem; }
+.hero-note { font-size: 0.85rem; color: var(--beige); margin-top: 0.8rem; max-width: 30rem; }
+.hero-reassurances { display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; margin-top: 1.5rem; font-size: 0.9rem; font-weight: 600; color: var(--beige); }
+.hero-reassurances li { display: flex; align-items: center; gap: 0.45rem; }
+.hero-reassurances svg { width: 18px; height: 18px; color: var(--cuivre-lumineux); flex-shrink: 0; }
+@media (min-width: 600px) { .hero-cta-zone { flex-direction: row; flex-wrap: wrap; } }
 @media (min-width: 900px) {
-  .hero-grille {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    align-items: center;
-    gap: 3rem;
+  .hero { padding: 6rem 0 6.5rem; }
+  /* Sur ordinateur, la photo occupe la partie droite et se fond dans le marine à gauche */
+  .hero-fond { left: 42%; }
+  .hero-fond img { object-position: 0% 30%; }
+  .hero::after {
+    background:
+      linear-gradient(90deg, var(--marine-fonce) 0%, var(--marine-fonce) 42%, rgba(14, 38, 68, 0.55) 62%, rgba(14, 38, 68, 0.42) 100%),
+      linear-gradient(180deg, rgba(10, 27, 49, 0) 55%, rgba(10, 27, 49, 0.6) 100%);
   }
+  .hero-contenu > * { max-width: 33rem; }
+  .hero-description { font-size: 1.2rem; }
 }
 
-.hero-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: var(--marine-noir);
-  border: 1px solid var(--marine-clair);
-  color: var(--cuivre-lumineux);
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-}
-
-.hero-tag-point {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--terracotta-clair);
-}
-
-.hero-title {
-  font-size: 2.15rem;
-  font-weight: 800;
-  line-height: 1.22;
-  color: var(--blanc);
-  margin-bottom: 1.25rem;
-  letter-spacing: -0.02em;
-}
-
-.hero-title .mot-cle {
-  color: var(--cuivre-lumineux);
-  position: relative;
-}
-
-.hero-description {
-  font-size: 1.1rem;
-  color: var(--beige);
-  line-height: 1.6;
-  margin-bottom: 2rem;
-}
-
-.hero-cta-zone {
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-}
-
-@media (min-width: 600px) {
-  .hero-cta-zone {
-    flex-direction: row;
-    align-items: center;
-  }
-  .hero-title {
-    font-size: 2.75rem;
-  }
-}
-
-/* Zone Image & Illustration Hero */
-.hero-visuel-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  width: 100%;
-}
-
-.hero-image-cadre {
-  position: relative;
-  background-color: var(--marine-noir);
-  border-radius: var(--radius-lg);
-  border: 2px solid var(--marine-clair);
-  box-shadow: var(--ombre-profonde);
-  overflow: hidden;
-}
-
-.hero-image {
-  width: 100%;
-  height: auto;
-  max-height: 360px;
-  display: block;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.hero-image-legende {
-  background-color: rgba(14, 38, 68, 0.95);
-  color: var(--beige);
-  padding: 0.6rem 1rem;
-  font-size: 0.82rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid var(--marine-clair);
-}
-
-.hero-image-legende span {
-  color: var(--cuivre-lumineux);
-  font-weight: 700;
-}
-
-/* Carte aperçu d'épreuve sous l'illustration */
-.hero-mini-apercu {
-  background-color: var(--blanc);
-  border-radius: var(--radius-md);
-  padding: 1.1rem 1.25rem;
-  color: var(--marine);
-  box-shadow: var(--ombre);
-  border-left: 4px solid var(--terracotta);
-  font-size: 0.88rem;
-}
-
-.mini-apercu-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.4rem;
-}
-
-.mini-apercu-titre {
-  font-weight: 800;
-  color: var(--marine);
-}
-
-.mini-badge {
-  background-color: var(--beige);
-  color: var(--terracotta-fonce);
-  font-size: 0.72rem;
-  font-weight: 800;
-  padding: 0.15rem 0.5rem;
-  border-radius: 4px;
-}
-
-.mini-apercu-texte {
-  color: var(--marine-fonce);
-  line-height: 1.45;
-  font-size: 0.84rem;
-}
-
-/* ==========================================================================
-   BANDEAU DISCIPLINE (PCT EN PRIORITÉ, PUIS MATHS)
-   ========================================================================== */
-.bandeau-disciplines {
-  background-color: var(--beige);
-  border-bottom: 1px solid var(--beige-fonce);
-  padding: 1.25rem 0;
-}
-
-.bandeau-contenu {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.bandeau-label {
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--marine);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.pills-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-  justify-content: center;
-}
-
-.pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 1rem;
-  border-radius: 999px;
-  font-size: 0.88rem;
-  font-weight: 700;
-}
-
-.pill-active {
-  background-color: var(--marine);
-  color: var(--blanc);
-}
-
-.pill-attente {
-  background-color: var(--blanc);
-  color: var(--marine);
-  border: 1.5px dashed var(--terracotta-clair);
-}
-
-@media (min-width: 768px) {
-  .bandeau-contenu {
-    flex-direction: row;
-    gap: 1.5rem;
-  }
-}
-
-/* ==========================================================================
-   TITRES & INTROS COMMUNES DE SECTIONS
-   ========================================================================== */
-.section-intro {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto 2.5rem auto;
-}
-
-.badge-section {
-  display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--terracotta-fonce);
-  background-color: var(--beige);
-  padding: 0.3rem 0.8rem;
-  border-radius: 999px;
-  margin-bottom: 0.75rem;
-}
-
-.titre-section {
-  font-size: 1.85rem;
-  font-weight: 800;
-  color: var(--marine);
-  line-height: 1.25;
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.01em;
-}
-
-.texte-section {
-  font-size: 1rem;
-  color: var(--marine-clair);
-}
-
-/* ==========================================================================
-   SECTION COMMENT ÇA MARCHE (FOND BEIGE CRÈME)
-   ========================================================================== */
-.comment-ca-marche {
+/* ---------- Sections ---------- */
+section { padding: 3.25rem 0; }
+.section-intro { text-align: center; max-width: 640px; margin: 0 auto 2rem; }
+.titre-section { font-size: clamp(1.6rem, 5.5vw, 2.3rem); font-weight: 800; color: var(--marine); }
+.texte-section { color: var(--texte-doux); margin-top: 0.6rem; }
+.section-motif {
   background-color: var(--beige-clair);
-  padding: 4rem 0;
-  border-bottom: 1px solid var(--beige-fonce);
+  background-image: linear-gradient(rgba(23, 58, 99, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(23, 58, 99, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
+@media (min-width: 900px) { section { padding: 5rem 0; } .section-intro { margin-bottom: 3rem; } }
 
-.grille-etapes {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .grille-etapes {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.carte-etape {
-  background-color: var(--blanc);
-  border: 1px solid var(--beige-fonce);
-  border-radius: var(--radius-lg);
-  padding: 2rem 1.5rem;
-  box-shadow: var(--ombre);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  transition: transform 0.2s ease;
-}
-
-.carte-etape:hover {
-  transform: translateY(-3px);
-  border-color: var(--terracotta);
-}
-
-.numero-etape {
-  width: 2.8rem;
-  height: 2.8rem;
-  background-color: var(--terracotta);
-  color: var(--blanc);
-  border-radius: var(--radius-md);
-  font-size: 1.35rem;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.25rem;
-}
-
-.carte-etape h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--marine);
-  margin-bottom: 0.65rem;
-}
-
-.carte-etape p {
-  font-size: 0.95rem;
-  color: var(--marine);
-  line-height: 1.55;
-}
-
-/* ==========================================================================
-   SECTION AVANTAGES
-   ========================================================================== */
-.avantages {
-  padding: 4.5rem 0;
-  background-color: var(--blanc);
-}
-
-.grille-avantages {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-@media (min-width: 640px) {
-  .grille-avantages {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 992px) {
-  .grille-avantages {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.carte-avantage {
-  background-color: var(--beige-clair);
-  border: 1px solid var(--beige-fonce);
-  border-radius: var(--radius-lg);
-  padding: 2rem 1.6rem;
-  box-shadow: var(--ombre);
-  display: flex;
-  flex-direction: column;
-}
-
-.icone-avantage {
-  width: 3.25rem;
-  height: 3.25rem;
-  background-color: var(--beige);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.25rem;
-  color: var(--terracotta-fonce);
-}
-
-.carte-avantage h3 {
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: var(--marine);
-  margin-bottom: 0.75rem;
-}
-
-.carte-avantage p {
-  font-size: 0.95rem;
-  color: var(--marine);
-  line-height: 1.6;
-}
-
-/* ==========================================================================
-   SECTION DES 3 PLANS (GRATUIT, ESSENTIEL, PREMIUM)
-   ========================================================================== */
-.plans {
-  padding: 4.5rem 0;
-  background: linear-gradient(180deg, var(--blanc) 0%, var(--beige-clair) 100%);
-  border-top: 1px solid var(--beige-fonce);
-}
-
-.grille-plans-3 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.75rem;
-  max-width: 1050px;
-  margin: 0 auto;
-}
-
+/* ---------- Étapes ---------- */
+.comment-ca-marche { background: var(--blanc); }
+.grille-etapes, .grille-avantages { display: grid; gap: 1rem; }
+.carte-etape { display: grid; grid-template-columns: auto 1fr; column-gap: 1rem; row-gap: 0.2rem; align-items: start; background: var(--beige-clair); border: 1px solid var(--beige-fonce); border-radius: var(--radius-lg); padding: 1.2rem; }
+.numero-etape { grid-row: span 2; width: 2.6rem; height: 2.6rem; border-radius: 10px; background: var(--terracotta-fonce); color: var(--blanc); font-family: var(--police-titre); font-weight: 800; font-size: 1.25rem; display: flex; align-items: center; justify-content: center; }
+.carte-etape h3 { font-size: 1.08rem; align-self: center; }
+.carte-etape p { grid-column: 2; color: var(--texte-doux); font-size: 0.95rem; }
 @media (min-width: 900px) {
-  .grille-plans-3 {
-    grid-template-columns: repeat(3, 1fr);
-    align-items: stretch;
-  }
+  .grille-etapes, .grille-avantages { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .carte-etape { display: block; padding: 1.75rem; }
+  .numero-etape { margin-bottom: 1rem; }
+  .carte-etape h3 { margin-bottom: 0.4rem; }
 }
 
-.carte-plan {
-  background-color: var(--blanc);
-  border: 2px solid var(--beige-fonce);
-  border-radius: var(--radius-lg);
-  padding: 2.25rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  box-shadow: var(--ombre);
+/* ---------- Bénéfices ---------- */
+.avantages { background: var(--marine); background-image: linear-gradient(180deg, var(--marine) 0%, var(--marine-fonce) 100%); }
+.avantages .titre-section { color: var(--blanc); }
+.carte-avantage { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--bordure-marine); border-radius: var(--radius-lg); padding: 1.3rem; color: var(--beige); }
+.icone-avantage { width: 3rem; height: 3rem; border-radius: 12px; background: rgba(227, 162, 124, 0.16); color: var(--cuivre-lumineux); display: flex; align-items: center; justify-content: center; margin-bottom: 0.9rem; }
+.carte-avantage h3 { color: var(--blanc); font-size: 1.12rem; margin-bottom: 0.35rem; }
+.carte-avantage p { font-size: 0.95rem; }
+
+/* ---------- Fondateur ---------- */
+.fondateur { background: var(--beige); padding: 2.5rem 0; }
+.fondateur-contenu { display: flex; flex-direction: column; gap: 1rem; max-width: 760px; }
+.fondateur-logo { width: 4.5rem; height: 4.5rem; border-radius: 50%; flex-shrink: 0; }
+.fondateur-titre { font-size: 1.45rem; margin-bottom: 0.4rem; }
+.fondateur p { color: #2C4563; }
+@media (min-width: 600px) { .fondateur-contenu { flex-direction: row; align-items: center; gap: 1.75rem; } }
+
+/* ---------- Tarifs ---------- */
+.plans { background: var(--blanc); }
+.grille-plans-3 { display: grid; gap: 1.25rem; }
+.carte-plan { background: var(--blanc); border: 1px solid var(--beige-fonce); border-radius: var(--radius-lg); padding: 1.4rem; display: flex; flex-direction: column; position: relative; box-shadow: var(--ombre); }
+.plan-recommande { border: 2px solid var(--terracotta); order: -1; margin-top: 0.75rem; }
+.plan-gratuit { order: 2; }
+.badge-recommande { position: absolute; top: -0.8rem; left: 50%; transform: translateX(-50%); background: var(--terracotta-fonce); color: var(--blanc); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.25rem 0.9rem; border-radius: 999px; }
+.nom-plan { font-size: 1.3rem; }
+.description-plan { font-size: 0.9rem; color: var(--texte-doux); margin: 0.2rem 0 0.9rem; }
+.prix-plan-box { background: var(--beige-clair); border: 1px solid var(--beige-fonce); border-radius: var(--radius-md); padding: 0.75rem; text-align: center; margin-bottom: 1rem; }
+.plan-recommande .prix-plan-box { background: var(--marine); border-color: var(--marine); }
+.prix-montant { font-family: var(--police-titre); font-size: 1.7rem; font-weight: 800; line-height: 1.1; }
+.prix-periode { font-size: 0.8rem; line-height: 1.3; margin-top: 0.15rem; font-weight: 600; color: var(--terracotta-fonce); }
+.plan-recommande .prix-montant { color: var(--blanc); }
+.plan-recommande .prix-periode { color: var(--cuivre-lumineux); }
+.liste-avantages-plan { display: grid; gap: 0.55rem; margin-bottom: 1.1rem; flex-grow: 1; align-content: start; }
+.item-avantage-plan { display: grid; grid-template-columns: 1.1rem 1fr; gap: 0.55rem; font-size: 0.93rem; align-items: start; }
+.item-avantage-plan.limite { color: #5C7189; }
+.coche, .tiret { width: 1.1rem; height: 1.1rem; margin-top: 0.2rem; position: relative; }
+.coche::before { content: ""; position: absolute; left: 0.3rem; top: 0.05rem; width: 0.35rem; height: 0.7rem; border: solid var(--terracotta); border-width: 0 2.5px 2.5px 0; transform: rotate(45deg); }
+.tiret::before { content: ""; position: absolute; left: 0.15rem; top: 0.5rem; width: 0.7rem; height: 2px; background: #8FA0B4; }
+.mention-usage { display: block; font-size: 0.78rem; color: var(--texte-doux); }
+.item-extra { display: none; }
+.carte-plan.ouvert .item-extra { display: grid; }
+.btn-voir-tout { background: none; border: 0; font-family: var(--police); font-size: 0.9rem; font-weight: 700; color: var(--terracotta-fonce); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; margin: -0.4rem 0 1rem; padding: 0.4rem 0; text-align: left; }
+.carte-plan .btn { width: 100%; }
+.plans-note { text-align: center; font-size: 0.88rem; color: var(--texte-doux); margin-top: 1.5rem; }
+@media (min-width: 900px) {
+  .grille-plans-3 { grid-template-columns: repeat(3, 1fr); align-items: stretch; gap: 1.5rem; }
+  .plan-recommande, .plan-gratuit { order: 0; }
+  .plan-recommande { margin-top: 0; box-shadow: var(--ombre-profonde); }
+  .item-extra { display: grid; }
+  .btn-voir-tout { display: none; }
 }
 
-/* Plan Premium recommandé */
-.carte-plan.plan-recommande {
-  border-color: var(--terracotta);
-  box-shadow: var(--ombre-profonde);
-  background-color: #ffffff;
+/* ---------- Questions fréquentes ---------- */
+.faq-contenu { max-width: 760px; }
+.faq-liste { display: grid; gap: 0.6rem; }
+.faq-item { background: var(--blanc); border: 1px solid var(--beige-fonce); border-radius: var(--radius-md); }
+.faq-item summary { cursor: pointer; font-weight: 700; padding: 0.95rem 2.8rem 0.95rem 1.1rem; position: relative; list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; position: absolute; right: 1.1rem; top: 50%; transform: translateY(-50%); font-size: 1.4rem; font-weight: 600; color: var(--terracotta-fonce); }
+.faq-item[open] summary::after { content: "−"; }
+.faq-item p { padding: 0 1.1rem 1rem; color: var(--texte-doux); font-size: 0.95rem; }
+
+/* ---------- Inscription ---------- */
+.zone-inscription { background: var(--marine); background-image: linear-gradient(180deg, var(--marine) 0%, var(--marine-fonce) 100%); }
+.conteneur-formulaire, .ecran-bienvenue { background: var(--blanc); border-radius: var(--radius-lg); padding: 1.6rem 1.25rem; max-width: 540px; margin: 0 auto; box-shadow: var(--ombre-profonde); }
+.titre-formulaire { font-size: 1.55rem; text-align: center; }
+.texte-formulaire { text-align: center; margin: 0.3rem 0 1.2rem; }
+.plan-selectionne-indicateur { display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; flex-wrap: wrap; background: var(--beige-clair); border: 1px solid var(--beige-fonce); border-radius: var(--radius-md); padding: 0.6rem 0.9rem; font-size: 0.85rem; margin-bottom: 1.1rem; }
+.plan-selectionne-nom { font-weight: 700; color: var(--terracotta-fonce); }
+.message-erreur-form { display: none; background: #FBEDE6; border: 1px solid var(--terracotta); color: #7A3F25; border-radius: var(--radius-sm); padding: 0.7rem 0.9rem; font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem; }
+.champ-groupe { margin-bottom: 1rem; }
+.champs-deux { display: grid; gap: 0 0.9rem; }
+.champ-label { display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 0.35rem; }
+.champ-input { width: 100%; font-family: var(--police); font-size: 1rem; color: var(--marine); padding: 0.8rem 0.9rem; border: 1.5px solid var(--beige-fonce); border-radius: var(--radius-md); background: var(--blanc); }
+.champ-input::placeholder { color: #8291A3; }
+.champ-input:focus { outline: none; border-color: var(--marine); box-shadow: 0 0 0 3px rgba(58, 110, 165, 0.25); }
+.zone-matieres { border: 1.5px solid var(--beige-fonce); border-radius: var(--radius-md); padding: 0.4rem 0.9rem; }
+.checkbox-ligne { display: flex; align-items: center; gap: 0.65rem; padding: 0.5rem 0; font-size: 0.95rem; cursor: pointer; flex-wrap: wrap; }
+.checkbox-ligne input { width: 1.2rem; height: 1.2rem; accent-color: var(--terracotta-fonce); flex-shrink: 0; }
+.badge-bientot { font-size: 0.72rem; font-weight: 700; background: var(--beige); color: var(--terracotta-fonce); padding: 0.15rem 0.5rem; border-radius: 6px; }
+.formulaire-mention { font-size: 0.8rem; color: var(--texte-doux); text-align: center; margin-top: 0.8rem; }
+@media (min-width: 600px) { .conteneur-formulaire, .ecran-bienvenue { padding: 2.25rem; } .champs-deux { grid-template-columns: 1fr 1fr; } }
+
+.ecran-bienvenue { text-align: center; }
+.bienvenue-icone { width: 4rem; height: 4rem; border-radius: 50%; background: var(--beige); color: var(--terracotta-fonce); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+.bienvenue-titre { font-size: 1.6rem; margin-bottom: 0.6rem; }
+.bienvenue-texte { color: var(--texte-doux); margin-bottom: 1.4rem; }
+
+/* ---------- Pied de page ---------- */
+.footer { background: var(--marine-noir); color: var(--beige); padding: 2.75rem 0 6rem; font-size: 0.92rem; }
+.grille-footer { display: grid; gap: 1.75rem; }
+.footer-presentation p { margin-top: 0.8rem; max-width: 24rem; opacity: 0.9; }
+.titre-colonne-footer { font-family: var(--police); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--cuivre-lumineux); margin-bottom: 0.7rem; }
+.liens-footer { display: grid; gap: 0.5rem; }
+.liens-footer a { text-decoration: underline; text-underline-offset: 3px; }
+.liens-footer a:hover { color: var(--blanc); }
+.bas-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; border-top: 1px solid var(--bordure-marine); margin-top: 2rem; padding-top: 1.25rem; font-size: 0.82rem; opacity: 0.85; }
+@media (min-width: 900px) { .grille-footer { grid-template-columns: 1.4fr 1fr 1fr; gap: 3rem; } .footer { padding-bottom: 2.5rem; } }
+
+/* ---------- Barre d'action fixe (téléphone) ---------- */
+.barre-mobile { position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; background: rgba(14, 38, 68, 0.97); border-top: 1px solid var(--bordure-marine); padding: 0.6rem 1rem calc(0.6rem + env(safe-area-inset-bottom)); transform: translateY(110%); transition: transform 0.25s ease; }
+.barre-mobile.visible { transform: translateY(0); }
+.barre-mobile .btn { width: 100%; padding: 0.75rem 1rem; }
+@media (min-width: 900px) { .barre-mobile { display: none; } }
+
+/* ---------- Apparition au défilement ---------- */
+.js .reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.js .reveal.visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .btn, .barre-mobile { transition: none; }
 }
 
-.badge-recommande {
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: var(--terracotta);
-  color: var(--blanc);
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 0.35rem 1rem;
-  border-radius: 999px;
-  white-space: nowrap;
+/* ---------- Ajustements petits écrans ---------- */
+.header-nav-btn { white-space: nowrap; }
+.checkbox-ligne { flex-wrap: nowrap; align-items: flex-start; }
+.checkbox-ligne input { margin-top: 0.15rem; }
+@media (max-width: 420px) { .logo-badge { display: none; } }
+@media (max-width: 359px) {
+  .logo { font-size: 1.1rem; gap: 0.4rem; }
+  .logo-image { width: 2rem; height: 2rem; }
+  .header-nav-btn { padding: 0.45rem 0.7rem; font-size: 0.82rem; }
+  .container { padding: 0 1rem; }
 }
-
-.nom-plan {
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: var(--marine);
-  margin-bottom: 0.4rem;
-}
-
-.description-plan {
-  font-size: 0.88rem;
-  color: var(--marine-clair);
-  min-height: 2.5rem;
-  margin-bottom: 1.25rem;
-}
-
-.prix-plan-box {
-  background-color: var(--beige-clair);
-  border: 1px solid var(--beige-fonce);
-  border-radius: var(--radius-md);
-  padding: 1rem 0.8rem;
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.plan-recommande .prix-plan-box {
-  background-color: var(--marine);
-  border-color: var(--marine-clair);
-}
-
-.prix-montant {
-  font-size: 1.6rem;
-  font-weight: 900;
-  color: var(--marine);
-  line-height: 1.1;
-}
-
-.plan-recommande .prix-montant {
-  color: var(--blanc);
-}
-
-.prix-periode {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--terracotta-fonce);
-  margin-top: 0.2rem;
-}
-
-.plan-recommande .prix-periode {
-  color: var(--cuivre-lumineux);
-}
-
-.liste-avantages-plan {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 1.75rem;
-  flex-grow: 1;
-}
-
-.item-avantage-plan {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.6rem;
-  font-size: 0.9rem;
-  color: var(--marine);
-  line-height: 1.4;
-}
-
-.item-avantage-plan svg {
-  width: 1.15rem;
-  height: 1.15rem;
-  flex-shrink: 0;
-  color: var(--terracotta);
-  margin-top: 0.15rem;
-}
-
-.item-avantage-plan.limite {
-  color: var(--marine-clair);
-}
-
-.item-avantage-plan.limite svg {
-  color: var(--terracotta-clair);
-}
-
-.mention-usage {
-  font-size: 0.78rem;
-  color: var(--terracotta-fonce);
-  font-style: italic;
-  display: block;
-}
-
-/* ==========================================================================
-   SECTION INSCRIPTION ET BIENVENUE
-   ========================================================================== */
-.zone-inscription {
-  padding: 4.5rem 0;
-  background-color: var(--blanc);
-  border-top: 1px solid var(--beige-fonce);
-}
-
-.conteneur-formulaire {
-  max-width: 650px;
-  margin: 0 auto;
-  background-color: var(--beige-clair);
-  border: 2px solid var(--beige-fonce);
-  border-radius: var(--radius-lg);
-  padding: 2.25rem 1.75rem;
-  box-shadow: var(--ombre);
-}
-
-@media (min-width: 600px) {
-  .conteneur-formulaire {
-    padding: 3rem 2.5rem;
-  }
-}
-
-.plan-selectionne-indicateur {
-  background-color: var(--marine);
-  color: var(--blanc);
-  padding: 0.6rem 1rem;
-  border-radius: var(--radius-md);
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.plan-selectionne-nom {
-  color: var(--cuivre-lumineux);
-  font-weight: 800;
-}
-
-.champ-groupe {
-  margin-bottom: 1.25rem;
-}
-
-.champ-label {
-  display: block;
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: var(--marine);
-  margin-bottom: 0.4rem;
-}
-
-.champ-facultatif {
-  font-weight: 400;
-  font-size: 0.8rem;
-  color: var(--marine-clair);
-}
-
-.champ-input {
-  width: 100%;
-  padding: 0.85rem 1rem;
-  font-size: 1rem;
-  font-family: inherit;
-  color: var(--marine);
-  background-color: var(--blanc);
-  border: 1.5px solid var(--beige-fonce);
-  border-radius: var(--radius-md);
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.champ-input:focus {
-  outline: none;
-  border-color: var(--terracotta);
-  box-shadow: 0 0 0 3px rgba(182, 111, 76, 0.2);
-}
-
-/* Zone des cases à cocher */
-.zone-matieres {
-  background-color: var(--blanc);
-  border: 1.5px solid var(--beige-fonce);
-  border-radius: var(--radius-md);
-  padding: 1rem 1.25rem;
-  margin-top: 0.35rem;
-}
-
-.checkbox-ligne {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.5rem 0;
-  cursor: pointer;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--marine);
-}
-
-.checkbox-ligne input[type="checkbox"] {
-  width: 1.25rem;
-  height: 1.25rem;
-  accent-color: var(--terracotta);
-  cursor: pointer;
-}
-
-.badge-bientot {
-  display: inline-block;
-  background-color: var(--beige);
-  color: var(--terracotta-fonce);
-  font-size: 0.75rem;
-  font-weight: 800;
-  padding: 0.2rem 0.6rem;
-  border-radius: 999px;
-  margin-left: 0.4rem;
-  border: 1px solid var(--beige-fonce);
-}
-
-.message-erreur-form {
-  display: none;
-  background-color: #fee2e2;
-  border: 1px solid #f87171;
-  color: #991b1b;
-  padding: 0.85rem 1rem;
-  border-radius: var(--radius-md);
-  font-size: 0.9rem;
-  margin-bottom: 1.25rem;
-}
-
-/* ==========================================================================
-   ÉCRAN DE BIENVENUE (POST-INSCRIPTION)
-   ========================================================================== */
-.ecran-bienvenue {
-  display: none; /* Révélé par JavaScript après inscription */
-  max-width: 650px;
-  margin: 0 auto;
-  background-color: var(--blanc);
-  border: 2px solid var(--terracotta);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem 1.75rem;
-  box-shadow: var(--ombre-profonde);
-  text-align: center;
-}
-
-@media (min-width: 600px) {
-  .ecran-bienvenue {
-    padding: 3.5rem 2.5rem;
-  }
-}
-
-.bienvenue-icone {
-  width: 4rem;
-  height: 4rem;
-  background-color: var(--beige);
-  color: var(--terracotta);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem auto;
-}
-
-.bienvenue-titre {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--marine);
-  margin-bottom: 0.5rem;
-}
-
-.bienvenue-statut {
-  display: inline-block;
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--terracotta-fonce);
-  background-color: var(--beige);
-  padding: 0.4rem 1rem;
-  border-radius: 999px;
-  margin-bottom: 1.5rem;
-}
-
-.bienvenue-recap {
-  background-color: var(--beige-clair);
-  border-left: 4px solid var(--terracotta);
-  padding: 1.25rem;
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  text-align: left;
-  font-size: 0.95rem;
-  color: var(--marine);
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-.notice-plan-payant {
-  display: none;
-  background-color: var(--marine);
-  color: var(--blanc);
-  padding: 1rem 1.25rem;
-  border-radius: var(--radius-md);
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-  text-align: left;
-}
-
-.notice-plan-payant strong {
-  color: var(--cuivre-lumineux);
-}
-
-.bienvenue-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-}
-
-.lien-plans-payants {
-  color: var(--terracotta-fonce);
-  font-size: 0.95rem;
-  font-weight: 700;
-  text-decoration: underline;
-  cursor: pointer;
-  padding: 0.5rem;
-}
-
-.lien-plans-payants:hover {
-  color: var(--marine);
-}
-
-/* ==========================================================================
-   MODALE "CETTE FONCTION ARRIVE BIENTÔT"
-   ========================================================================== */
-.modale-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background-color: rgba(10, 27, 49, 0.7);
-  backdrop-filter: blur(4px);
-  z-index: 200;
-  align-items: center;
-  justify-content: center;
-  padding: 1.25rem;
-}
-
-.modale-overlay.active {
-  display: flex;
-}
-
-.modale-boite {
-  background-color: var(--blanc);
-  border: 2px solid var(--terracotta);
-  border-radius: var(--radius-lg);
-  max-width: 460px;
-  width: 100%;
-  padding: 2.25rem 1.75rem;
-  text-align: center;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.modale-icone {
-  width: 3.5rem;
-  height: 3.5rem;
-  background-color: var(--beige);
-  color: var(--terracotta);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.25rem auto;
-}
-
-.modale-titre {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--marine);
-  margin-bottom: 0.75rem;
-}
-
-.modale-texte {
-  font-size: 0.95rem;
-  color: var(--marine);
-  line-height: 1.55;
-  margin-bottom: 1.75rem;
-}
-
-/* ==========================================================================
-   PIED DE PAGE (FOOTER AVEC NOUS CONTACTER DISCRET)
-   ========================================================================== */
-.footer {
-  background-color: var(--marine-fonce);
-  color: var(--beige);
-  border-top: 3px solid var(--terracotta);
-  padding: 3.5rem 0 2rem 0;
-}
-
-.grille-footer {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  margin-bottom: 2.5rem;
-}
-
-@media (min-width: 768px) {
-  .grille-footer {
-    grid-template-columns: 2fr 1fr 1fr;
-  }
-}
-
-.footer-presentation p {
-  font-size: 0.92rem;
-  color: var(--beige);
-  margin-top: 0.85rem;
-  line-height: 1.6;
-  max-width: 360px;
-}
-
-.titre-colonne-footer {
-  font-size: 0.88rem;
-  font-weight: 800;
-  color: var(--cuivre-lumineux);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 1rem;
-}
-
-.liens-footer {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  font-size: 0.9rem;
-}
-
-.liens-footer a:hover {
-  color: var(--blanc);
-  text-decoration: underline;
-}
-
-/* Lien discret "Nous contacter" */
-.lien-contact-discret {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--cuivre-lumineux);
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.lien-contact-discret:hover {
-  color: var(--blanc);
-  text-decoration: underline;
-}
-
-.bas-footer {
-  border-top: 1px solid var(--marine-clair);
-  padding-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  align-items: center;
-  text-align: center;
-  font-size: 0.85rem;
-  color: var(--beige-fonce);
-}
-
-@media (min-width: 600px) {
-  .bas-footer {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-  }
-}
+@media (min-width: 900px) { .hero-contenu > .hero-cta-zone { max-width: 40rem; } }

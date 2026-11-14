@@ -3,527 +3,364 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ProfÉclair - Fiches pédagogiques et devoirs pour enseignants du Bénin</title>
-  <meta name="description" content="ProfÉclair accompagne les enseignants du secondaire au Bénin : préparez vos fiches pédagogiques, devoirs et interrogations avec corrigés détaillés en PCT et Mathématiques.">
+  <title>ProfÉclair - Fiches pédagogiques, interrogations et devoirs de PCT pour les enseignants du Bénin</title>
+  <meta name="description" content="ProfÉclair prépare vos fiches pédagogiques, interrogations et devoirs de PCT avec corrigé et barème, selon les programmes du Bénin. Réservez votre accès anticipé gratuit.">
+  <meta name="theme-color" content="#173A63">
+
+  <!-- Aperçu lors d'un partage WhatsApp / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="ProfÉclair">
+  <meta property="og:url" content="https://profeclair.vercel.app/">
+  <meta property="og:title" content="ProfÉclair : vos fiches, interrogations et devoirs de PCT en quelques minutes">
+  <meta property="og:description" content="Pour les enseignants du secondaire au Bénin. Corrigé et barème inclus. Réservez votre accès anticipé gratuit.">
+  <meta property="og:image" content="https://profeclair.vercel.app/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>document.documentElement.classList.add("js");</script>
   <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- ==========================================================================
-       EN-TÊTE (HEADER)
+       EN-TÊTE
        ========================================================================== -->
   <header class="header">
     <div class="container header-content">
       <a href="#" class="logo" aria-label="Accueil ProfÉclair">
-        <img src="logo.png" alt="Logo ProfÉclair" class="logo-image">
+        <img src="logo-96.png" alt="" class="logo-image" width="38" height="38">
         <span>ProfÉclair</span>
         <span class="logo-badge">Bénin</span>
       </a>
 
-      <div>
-        <a href="#inscription" class="btn btn-secondaire-beige header-nav-btn btn-declencheur-plan" data-plan="gratuit">S'inscrire</a>
-      </div>
+      <nav class="header-nav" aria-label="Navigation principale">
+        <a href="#comment-ca-marche">Comment ça marche</a>
+        <a href="#plans">Tarifs</a>
+        <a href="#faq">Questions</a>
+      </nav>
+
+      <a href="#inscription" class="btn btn-terracotta header-nav-btn btn-declencheur-plan" data-plan="gratuit">Accès anticipé</a>
     </div>
   </header>
 
   <main>
     <!-- ==========================================================================
-         HERO SECTION (ACCUEIL AVEC IMAGE ET ILLUSTRATION PROFESSIONNELLE)
+         ACCUEIL (HERO)
          ========================================================================== -->
     <section class="hero">
-      <div class="container">
-        
-        <div class="hero-grille">
-          <!-- Colonne gauche : Textes et Boutons d'action -->
-          <div class="hero-textes">
-            <div class="hero-tag">
-              <span class="hero-tag-point"></span>
-              <span>Enseignement secondaire béninois (6<sup>e</sup> à la Terminale)</span>
-            </div>
+      <!-- Photo d'accueil : photo libre de droits (Unsplash). Pour la changer, remplacez les 4 adresses ci-dessous. -->
+      <div class="hero-fond" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1758519290803-f2b25952a5d7?auto=format&amp;fit=crop&amp;q=70&amp;w=1400" srcset="https://images.unsplash.com/photo-1758519290803-f2b25952a5d7?auto=format&amp;fit=crop&amp;q=70&amp;w=480 480w, https://images.unsplash.com/photo-1758519290803-f2b25952a5d7?auto=format&amp;fit=crop&amp;q=70&amp;w=800 800w, https://images.unsplash.com/photo-1758519290803-f2b25952a5d7?auto=format&amp;fit=crop&amp;q=70&amp;w=1400 1400w" sizes="(min-width: 900px) 60vw, 100vw" alt="" width="1400" height="788" fetchpriority="high">
+      </div>
 
-            <h1 class="hero-title">
-              Préparez vos fiches de cours, interrogations et devoirs <span class="mot-cle">adaptés à vos classes</span>.
-            </h1>
+      <div class="container hero-contenu">
+        <h1 class="hero-title">
+          Vos fiches, interrogations et devoirs de PCT prêts <span class="mot-cle">en quelques minutes</span>.
+        </h1>
 
-            <p class="hero-description">
-              L'application conçue pour faciliter le travail des professeurs du secondaire au Bénin. Générez des situations d'apprentissage conformes aux programmes officiels, accompagnées de corrigés complets pour vos évaluations.
-            </p>
+        <p class="hero-description">
+          Selon les programmes du Bénin, avec corrigé et barème. De la 6<sup>e</sup> à la Terminale.
+        </p>
 
-            <div class="hero-cta-zone">
-              <a href="#inscription" class="btn btn-terracotta btn-declencheur-plan" data-plan="gratuit">
-                <span>Commencer gratuitement</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              
-              <a href="#comment-ca-marche" class="btn btn-secondaire-beige">
-                <span>Comment ça marche</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Colonne droite : Illustration vivante & Aperçu réaliste -->
-          <div class="hero-visuel-wrapper">
-            <div class="hero-image-cadre">
-              <img 
-                src="enseignant-hero.jpg" 
-                alt="Enseignant africain souriant dans une classe de sciences au Bénin avec ses élèves et son matériel pédagogique" 
-                class="hero-image"
-                loading="eager"
-              >
-              <div class="hero-image-legende">
-                <span>Conforme aux programmes du Bénin</span>
-                <small>6<sup>e</sup> à Terminale</small>
-              </div>
-            </div>
-
-            <!-- Mini aperçu d'épreuve contextualisée -->
-            <div class="hero-mini-apercu">
-              <div class="mini-apercu-header">
-                <span class="mini-apercu-titre">Devoir de PCT • Classe de 3<sup>ème</sup></span>
-                <span class="mini-badge">Corrigé inclus</span>
-              </div>
-              <p class="mini-apercu-texte">
-                <strong>Situation d'évaluation :</strong> Réactions d'oxydoréduction et protection contre la corrosion saline dans les ateliers de Porto-Novo.
-              </p>
-            </div>
-          </div>
+        <div class="hero-cta-zone">
+          <a href="#inscription" class="btn btn-terracotta btn-declencheur-plan" data-plan="gratuit">
+            <span>Réserver mon accès anticipé</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="#comment-ca-marche" class="btn btn-secondaire-beige">Comment ça marche</a>
         </div>
+        <p class="hero-note">Gratuit. Le générateur ouvre bientôt : vous serez parmi les premiers prévenus.</p>
 
+        <ul class="hero-reassurances">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            Programmes du Bénin
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            Corrigé et barème inclus
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            Utilisable sur téléphone
+          </li>
+        </ul>
       </div>
     </section>
 
     <!-- ==========================================================================
-         BANDEAU DES MATIÈRES (PCT EN PRIORITÉ, PUIS MATHS)
-         ========================================================================== -->
-    <div class="bandeau-disciplines">
-      <div class="container bandeau-contenu">
-        <span class="bandeau-label">Disciplines prises en charge :</span>
-        <div class="pills-group">
-          <div class="pill pill-active">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M10 2v7.31"></path>
-              <path d="M14 9.3V1.99"></path>
-              <path d="M8.5 2h7"></path>
-              <path d="M14 9.3a6.5 6.5 0 1 1-4 0"></path>
-              <path d="M5.52 16h12.96"></path>
-            </svg>
-            <span>PCT (Physique, Chimie & Technologie) — <strong>Disponible en premier</strong></span>
-          </div>
-          
-          <div class="pill pill-attente">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="4" y1="9" x2="20" y2="9"></line>
-              <line x1="4" y1="15" x2="20" y2="15"></line>
-              <line x1="10" y1="3" x2="8" y2="21"></line>
-              <line x1="16" y1="3" x2="14" y2="21"></line>
-            </svg>
-            <span>Mathématiques — <em>Bientôt disponible</em></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ==========================================================================
-         SECTION COMMENT ÇA MARCHE (3 ÉTAPES SIMPLES)
+         COMMENT ÇA MARCHE
          ========================================================================== -->
     <section id="comment-ca-marche" class="comment-ca-marche">
       <div class="container">
-        
-        <div class="section-intro">
-          <span class="badge-section">Méthode simple</span>
-          <h2 class="titre-section">Comment ça marche ?</h2>
-          <p class="texte-section">
-            Trois étapes directes, pensées pour être utilisées en toute simplicité depuis votre téléphone portable.
-          </p>
+        <div class="section-intro reveal">
+          <h2 class="titre-section">Trois étapes, depuis votre téléphone</h2>
         </div>
 
         <div class="grille-etapes">
-          
-          <!-- Étape 1 -->
-          <div class="carte-etape">
+          <div class="carte-etape reveal">
             <div class="numero-etape">1</div>
-            <h3>Renseignez votre niveau et sujet</h3>
-            <p>
-              Indiquez la classe concernée (de la 6<sup>e</sup> à la Terminale), la matière (PCT en priorité) et le chapitre au programme officiel béninois que vous abordez.
-            </p>
+            <h3>Choisissez la classe et le chapitre</h3>
+            <p>De la 6<sup>e</sup> à la Terminale, selon le programme que vous suivez.</p>
           </div>
-
-          <!-- Étape 2 -->
-          <div class="carte-etape">
+          <div class="carte-etape reveal">
             <div class="numero-etape">2</div>
-            <h3>Définissez le type de document</h3>
-            <p>
-              Choisissez le format adapté à votre séance : une fiche de préparation pédagogique complète, une interrogation de contrôle rapide ou un devoir surveillé d'étape.
-            </p>
+            <h3>Choisissez le document</h3>
+            <p>Fiche pédagogique, interrogation rapide ou devoir surveillé.</p>
           </div>
-
-          <!-- Étape 3 -->
-          <div class="carte-etape">
+          <div class="carte-etape reveal">
             <div class="numero-etape">3</div>
-            <h3>Générez votre document avec corrigé</h3>
-            <p>
-              Obtenez immédiatement une épreuve prête pour vos élèves, accompagnée des réponses types et des critères de notation pour faciliter vos corrections.
-            </p>
+            <h3>Recevez sujet, corrigé et barème</h3>
+            <p>Une version pour les élèves, une version pour vous avec les réponses et les critères de notation.</p>
           </div>
-
         </div>
-
       </div>
     </section>
 
     <!-- ==========================================================================
-         SECTION AVANTAGES
+         BÉNÉFICES
          ========================================================================== -->
     <section class="avantages">
       <div class="container">
-        
-        <div class="section-intro">
-          <span class="badge-section">Vos bénéfices</span>
+        <div class="section-intro reveal">
           <h2 class="titre-section">Pensé pour votre réalité d'enseignant</h2>
-          <p class="texte-section">
-            Un soutien concret pour alléger vos heures de préparation et sécuriser la conformité de vos cours.
-          </p>
         </div>
 
         <div class="grille-avantages">
-          
-          <!-- Avantage 1 : Gain de temps -->
-          <div class="carte-avantage">
+          <div class="carte-avantage reveal">
             <div class="icone-avantage">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
             </div>
-            <h3>Gain de temps précieux</h3>
-            <p>
-              Ne perdez plus des heures à rédiger vos fiches de cours à la main ou à chercher des exercices dans de multiples manuels. Préparez vos séances en quelques minutes et préservez vos soirées.
-            </p>
+            <h3>Vos soirées vous reviennent</h3>
+            <p>Fini les heures à rédiger à la main ou à chercher des exercices dans plusieurs manuels.</p>
           </div>
-
-          <!-- Avantage 2 : Adapté au milieu local -->
-          <div class="carte-avantage">
+          <div class="carte-avantage reveal">
             <div class="icone-avantage">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
             </div>
-            <h3>Adapté au milieu de l'enseignant</h3>
-            <p>
-              Les exercices et les situations de départ s'inspirent directement de l'environnement quotidien de nos élèves et tiennent compte du matériel accessible dans nos collèges et lycées.
-            </p>
+            <h3>Des situations tirées du quotidien</h3>
+            <p>Les exercices partent du milieu de vos élèves et du matériel réellement disponible dans nos collèges et lycées.</p>
           </div>
-
-          <!-- Avantage 3 : Fiches avec et sans réponses -->
-          <div class="carte-avantage">
+          <div class="carte-avantage reveal">
             <div class="icone-avantage">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="16" y1="13" x2="8" y2="13"></line>
-                <line x1="16" y1="17" x2="8" y2="17"></line>
-                <polyline points="10 9 9 9 8 9"></polyline>
-              </svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
             </div>
-            <h3>Fiches avec et sans réponses</h3>
-            <p>
-              Disposez des deux volets indispensables : une version sujet prête à être dictée, recopiée au tableau ou tirée, et une version corrigée avec le détail des étapes et le barème de notation.
-            </p>
+            <h3>Version élève et version enseignant</h3>
+            <p>Le sujet sans réponses pour la classe, le corrigé détaillé avec barème pour vous.</p>
           </div>
-
         </div>
-
       </div>
     </section>
 
     <!-- ==========================================================================
-         SECTION DES 3 PLANS (GRATUIT, ESSENTIEL, PREMIUM)
+         QUI EST DERRIÈRE PROFÉCLAIR
+         ========================================================================== -->
+    <section class="fondateur">
+      <div class="container fondateur-contenu reveal">
+        <img src="logo-96.png" alt="" class="fondateur-logo" width="72" height="72" loading="lazy">
+        <div>
+          <h2 class="fondateur-titre">Conçu par un enseignant de PCT</h2>
+          <p>ProfÉclair est né d'un constat de terrain : préparer une fiche, une interrogation et un devoir avec son corrigé prend des heures, chaque semaine. L'outil est construit par un enseignant, pour les enseignants du Bénin.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TARIFS
          ========================================================================== -->
     <section id="plans" class="plans">
       <div class="container">
-        
-        <div class="section-intro">
-          <span class="badge-section">Formules adaptées</span>
-          <h2 class="titre-section">Choisissez votre formule</h2>
-          <p class="texte-section">
-            Commencez sans engagement avec le plan d'essai, ou préparez l'année avec nos formules complètes.
-          </p>
+        <div class="section-intro reveal">
+          <h2 class="titre-section">Les formules prévues à l'ouverture</h2>
+          <p class="texte-section">L'accès anticipé est gratuit. Indiquez la formule qui vous intéresse, vous serez prévenu en premier.</p>
         </div>
 
         <div class="grille-plans-3">
-          
-          <!-- Plan 1 : Gratuit -->
-          <div class="carte-plan">
-            <h3 class="nom-plan">Plan Gratuit</h3>
-            <p class="description-plan">Idéal pour tester l'application et découvrir la qualité des fiches générées.</p>
-            
+
+          <!-- Plan Gratuit -->
+          <div class="carte-plan plan-gratuit reveal">
+            <h3 class="nom-plan">Gratuit</h3>
+            <p class="description-plan">Pour tester la qualité des fiches.</p>
             <div class="prix-plan-box">
               <div class="prix-montant">0 FCFA</div>
               <div class="prix-periode">Accès d'essai</div>
             </div>
-
             <ul class="liste-avantages-plan">
-              <li class="item-avantage-plan">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <span>3 fiches pédagogiques à l'essai</span>
-              </li>
-              <li class="item-avantage-plan">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <span>PCT seulement</span>
-              </li>
-              <li class="item-avantage-plan limite">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-                <span>Lecture à l'écran uniquement (pas de téléchargement)</span>
-              </li>
-              <li class="item-avantage-plan limite">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-                <span>Fiches seulement (pas de devoirs ni d'interrogations)</span>
-              </li>
-              <li class="item-avantage-plan">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <span>Adaptation de base au milieu</span>
-              </li>
+              <li class="item-avantage-plan"><span class="coche" aria-hidden="true"></span><span>3 fiches pédagogiques à l'essai</span></li>
+              <li class="item-avantage-plan"><span class="coche" aria-hidden="true"></span><span>PCT seulement</span></li>
+              <li class="item-avantage-plan limite"><span class="tiret" aria-hidden="true"></span><span>Lecture à l'écran, sans téléchargement</span></li>
+              <li class="item-avantage-plan limite"><span class="tiret" aria-hidden="true"></span><span>Pas de devoirs ni d'interrogations</span></li>
             </ul>
-
-            <a href="#inscription" class="btn btn-secondaire-marine btn-declencheur-plan" data-plan="gratuit">
-              Commencer gratuitement
-            </a>
+            <a href="#inscription" class="btn btn-secondaire-marine btn-declencheur-plan" data-plan="gratuit">Réserver mon accès</a>
           </div>
 
-          <!-- Plan 2 : Essentiel -->
-          <div class="carte-plan">
-            <h3 class="nom-plan">Plan Essentiel</h3>
-            <p class="description-plan">Pour l'enseignant régulier qui prépare ses séances et ses évaluations d'étapes.</p>
-            
+          <!-- Plan Essentiel -->
+          <div class="carte-plan plan-essentiel reveal">
+            <h3 class="nom-plan">Essentiel</h3>
+            <p class="description-plan">Pour préparer séances et évaluations chaque mois.</p>
             <div class="prix-plan-box">
               <div class="prix-montant">4 900 FCFA</div>
               <div class="prix-periode">par mois</div>
             </div>
-
             <ul class="liste-avantages-plan">
-              <li class="item-avantage-plan">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <span>Jusqu'à 15 documents par mois</span>
-              </li>
-              <li class="item-avantage-plan">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <span>Fiches + devoirs + interrogations avec corrigé et barème</span>
-              </li>
-              <li class="item-avantage-plan">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <span>Téléchargement Word et PDF</span>
-              </li>
-              <li class="item-avantage-plan">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <span>Adaptation complète au milieu local</span>
-              </li>
+              <li class="item-avantage-plan"><span class="coche" aria-hidden="true"></span><span>Jusqu'à 15 documents par mois</span></li>
+              <li class="item-avantage-plan"><span class="coche" aria-hidden="true"></span><span>Fiches, devoirs et interrogations avec corrigé et barème</span></li>
+              <li class="item-avantage-plan"><span class="coche" aria-hidden="true"></span><span>Votre nom d'enseignant sur chaque document</span></li>
+              <li class="item-avantage-plan"><span class="coche" aria-hidden="true"></span><span>Téléchargement Word et PDF</span></li>
+              <li class="item-avantage-plan"><span class="coche" aria-hidden="true"></span><span>Adaptation complète au milieu local</span></li>
             </ul>
-
-            <a href="#inscription" class="btn btn-secondaire-marine btn-declencheur-plan" data-plan="essentiel">
-              Choisir ce plan
-            </a>
+            <a href="#inscription" class="btn btn-secondaire-marine btn-declencheur-plan" data-plan="essentiel">Me prévenir à l'ouverture</a>
           </div>
 
-          <!-- Plan 3 : Premium (Recommandé) -->
-          <div class="carte-plan plan-recommande">
+          <!-- Plan Premium (recommandé) -->
+          <div class="carte-plan plan-recommande reveal">
             <div class="badge-recommande">Recommandé</div>
-            <h3 class="nom-plan">Plan Premium</h3>
-            <p class="description-plan">Pour une liberté totale de travail et une personnalisation avancée pour vos classes.</p>
-            
+            <h3 class="nom-plan">Premium</h3>
+            <p class="description-plan">Pour préparer toute l'année sans compter vos documents.</p>
             <div class="prix-plan-box">
               <div class="prix-montant">8 900 FCFA</div>
               <div class="prix-periode">par mois</div>
             </div>
-
             <ul class="liste-avantages-plan">
-              <li class="item-avantage-plan">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <span>Tout l'Essentiel inclus</span>
-              </li>
-              <li class="item-avantage-plan">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <div>
-                  <span>Usage étendu (beaucoup plus de documents)</span>
-                  <span class="mention-usage">* soumis à un usage raisonnable</span>
-                </div>
-              </li>
-              <li class="item-avantage-plan">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <span>Épreuves complètes</span>
-              </li>
-              <li class="item-avantage-plan">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <span>Historique de tous mes documents</span>
-              </li>
-              <li class="item-avantage-plan">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <span>En-tête personnalisé avec le nom de mon établissement</span>
-              </li>
-              <li class="item-avantage-plan">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <span>Nouvelles matières en priorité (mathématiques dès leur lancement)</span>
-              </li>
-              <li class="item-avantage-plan">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <span>Support prioritaire</span>
-              </li>
+              <li class="item-avantage-plan"><span class="coche" aria-hidden="true"></span><span>Tout l'Essentiel inclus</span></li>
+              <li class="item-avantage-plan"><span class="coche" aria-hidden="true"></span><span>Usage étendu, beaucoup plus de documents <small class="mention-usage">(soumis à un usage raisonnable)</small></span></li>
+              <li class="item-avantage-plan"><span class="coche" aria-hidden="true"></span><span>Deux versions d'un même sujet (A et B) pour limiter la triche</span></li>
+              <li class="item-avantage-plan"><span class="coche" aria-hidden="true"></span><span>Épreuves complètes</span></li>
+              <li class="item-avantage-plan item-extra"><span class="coche" aria-hidden="true"></span><span>Historique de tous vos documents, réutilisables d'une année à l'autre</span></li>
+              <li class="item-avantage-plan item-extra"><span class="coche" aria-hidden="true"></span><span>Nouvelles matières en priorité (mathématiques dès leur lancement)</span></li>
+              <li class="item-avantage-plan item-extra"><span class="coche" aria-hidden="true"></span><span>Support prioritaire</span></li>
             </ul>
-
-            <a href="#inscription" class="btn btn-terracotta btn-declencheur-plan" data-plan="premium">
-              Choisir ce plan
-            </a>
+            <button type="button" class="btn-voir-tout" aria-expanded="false">Voir tout</button>
+            <a href="#inscription" class="btn btn-terracotta btn-declencheur-plan" data-plan="premium">Me prévenir à l'ouverture</a>
           </div>
 
         </div>
 
+        <p class="plans-note">Tarifs prévus à l'ouverture. Paiement par Mobile Money ou carte bancaire. Sans engagement.</p>
       </div>
     </section>
 
     <!-- ==========================================================================
-         SECTION INSCRIPTION & POST-INSCRIPTION
+         QUESTIONS FRÉQUENTES
+         ========================================================================== -->
+    <section id="faq" class="faq section-motif">
+      <div class="container faq-contenu">
+        <div class="section-intro reveal">
+          <h2 class="titre-section">Questions fréquentes</h2>
+        </div>
+
+        <div class="faq-liste reveal">
+          <details class="faq-item">
+            <summary>Les documents suivent-ils les programmes officiels ?</summary>
+            <p>ProfÉclair s'appuie sur les programmes du secondaire béninois, classe par classe. Chaque document porte la mention « À vérifier par l'enseignant avant utilisation » : vous gardez toujours la main.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Est-ce que ça marche sur mon téléphone ?</summary>
+            <p>Oui. L'outil est pensé d'abord pour le téléphone, et il fonctionne aussi sur ordinateur.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Faut-il une bonne connexion ?</summary>
+            <p>Une connexion mobile ordinaire suffit pour générer un document. Une fois téléchargé, il se consulte et s'imprime sans connexion.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Puis-je modifier le document obtenu ?</summary>
+            <p>Oui. Avec les formules payantes, vous téléchargez le document au format Word et vous l'adaptez librement à votre classe.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Comment se fera le paiement ?</summary>
+            <p>Par Mobile Money ou carte bancaire, à l'ouverture des formules payantes. L'accès anticipé, lui, est gratuit.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Quelles matières après la PCT ?</summary>
+            <p>Les mathématiques sont en préparation. Les inscrits en accès anticipé seront prévenus en premier.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INSCRIPTION (ACCÈS ANTICIPÉ)
          ========================================================================== -->
     <section id="inscription" class="zone-inscription">
       <div class="container">
-        
-        <!-- ÉCRAN 1 : FORMULAIRE D'INSCRIPTION -->
+
+        <!-- ÉCRAN 1 : FORMULAIRE -->
         <div id="blocFormulaireInscription" class="conteneur-formulaire">
-          <div class="section-intro" style="margin-bottom: 1.5rem;">
-            <span class="badge-section">Adhésion</span>
-            <h2 class="titre-section" style="font-size: 1.65rem;">Inscription à ProfÉclair</h2>
-            <p class="texte-section" style="font-size: 0.95rem;">
-              Créez votre accès enseignant en quelques instants.
-            </p>
-          </div>
+          <h2 class="titre-section titre-formulaire">Réservez votre accès anticipé</h2>
+          <p class="texte-section texte-formulaire">Gratuit. Moins d'une minute.</p>
 
-          <!-- Indicateur du plan sélectionné -->
           <div class="plan-selectionne-indicateur">
-            <span>Formule choisie :</span>
-            <span id="labelPlanChoisi" class="plan-selectionne-nom">Plan Gratuit (0 FCFA)</span>
+            <span>Formule qui vous intéresse :</span>
+            <span id="labelPlanChoisi" class="plan-selectionne-nom">Gratuit (0 FCFA)</span>
           </div>
 
-          <!-- Message d'erreur dynamique -->
           <div id="messageErreurForm" class="message-erreur-form" role="alert"></div>
 
           <form id="formulaireInscription" novalidate>
-            <div class="champ-groupe">
-              <label for="champPrenom" class="champ-label">Prénom *</label>
-              <input type="text" id="champPrenom" class="champ-input" placeholder="Ex. Koffi" required>
+            <div class="champs-deux">
+              <div class="champ-groupe">
+                <label for="champPrenom" class="champ-label">Prénom</label>
+                <input type="text" id="champPrenom" class="champ-input" placeholder="Ex. Koffi" autocomplete="given-name" required>
+              </div>
+              <div class="champ-groupe">
+                <label for="champNom" class="champ-label">Nom</label>
+                <input type="text" id="champNom" class="champ-input" placeholder="Ex. Mensah" autocomplete="family-name" required>
+              </div>
             </div>
 
             <div class="champ-groupe">
-              <label for="champNom" class="champ-label">Nom *</label>
-              <input type="text" id="champNom" class="champ-input" placeholder="Ex. Mensah" required>
+              <label for="champTelephone" class="champ-label">Numéro WhatsApp</label>
+              <input type="tel" id="champTelephone" class="champ-input" value="+229 " inputmode="tel" autocomplete="tel" required>
             </div>
 
             <div class="champ-groupe">
-              <label for="champEmail" class="champ-label">Adresse e-mail *</label>
-              <input type="email" id="champEmail" class="champ-input" placeholder="exemple@domaine.com" required>
+              <label for="champEmail" class="champ-label">Adresse e-mail</label>
+              <input type="email" id="champEmail" class="champ-input" placeholder="exemple@domaine.com" autocomplete="email" required>
             </div>
 
             <div class="champ-groupe">
-              <label for="champTelephone" class="champ-label">
-                Numéro de téléphone <span class="champ-facultatif">(facultatif)</span>
-              </label>
-              <input type="tel" id="champTelephone" class="champ-input" placeholder="Ex. +229 97 00 00 00">
-            </div>
-
-            <div class="champ-groupe">
-              <span class="champ-label">Je suis enseignant(e) de : *</span>
+              <span class="champ-label">J'enseigne :</span>
               <div class="zone-matieres">
                 <label class="checkbox-ligne">
-                  <input type="checkbox" id="checkPCT" value="PCT">
-                  <span>PCT (Physique, Chimie & Technologie)</span>
+                  <input type="checkbox" id="checkPCT" value="PCT" checked>
+                  <span>PCT (Physique, Chimie et Technologie)</span>
                 </label>
                 <label class="checkbox-ligne">
                   <input type="checkbox" id="checkMaths" value="Mathématiques">
                   <span>Mathématiques</span>
-                  <span id="badgeMathsBientot" class="badge-bientot" style="display: none;">Bientôt disponible</span>
+                  <span id="badgeMathsBientot" class="badge-bientot" hidden>En préparation</span>
                 </label>
               </div>
             </div>
 
-            <button type="submit" class="btn btn-terracotta" style="margin-top: 1rem;">
-              <span>Valider mon inscription</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
+            <button type="submit" id="btnValiderInscription" class="btn btn-terracotta btn-large">
+              <span class="btn-libelle">Réserver mon accès anticipé</span>
             </button>
+            <p class="formulaire-mention">Vos coordonnées servent uniquement à vous prévenir de l'ouverture de ProfÉclair.</p>
           </form>
         </div>
 
-        <!-- ÉCRAN 2 : POST-INSCRIPTION (BIENVENUE) -->
-        <div id="ecranBienvenue" class="ecran-bienvenue" role="region" aria-live="polite">
+        <!-- ÉCRAN 2 : CONFIRMATION -->
+        <div id="ecranBienvenue" class="ecran-bienvenue" role="region" aria-live="polite" hidden>
           <div class="bienvenue-icone">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-              <polyline points="22 4 12 14.01 9 11.01"></polyline>
-            </svg>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
           </div>
-
-          <h2 class="bienvenue-titre">Bienvenue, <span id="affichagePrenom">Enseignant</span> !</h2>
-          <div class="bienvenue-statut">Votre plan Gratuit est activé</div>
-
-          <div class="bienvenue-recap">
-            <strong>Contenu de votre accès d'essai :</strong>
-            <p style="margin-top: 0.35rem;">
-              • 3 fiches pédagogiques à l'essai<br>
-              • Discipline : PCT seulement<br>
-              • Lecture à l'écran uniquement (sans téléchargement)<br>
-              • Adaptation de base au milieu local
-            </p>
-          </div>
-
-          <!-- Message conditionnel si l'utilisateur est arrivé depuis un plan payant -->
-          <div id="noticePlanPayant" class="notice-plan-payant">
-            <strong>Note sur votre formule :</strong> Les plans payants ouvriront bientôt. Commencez avec le plan Gratuit.
-          </div>
-
+          <h2 class="bienvenue-titre">C'est noté, <span id="affichagePrenom">cher collègue</span>.</h2>
+          <p id="texteConfirmation" class="bienvenue-texte">
+            Dernière étape : confirmez votre réservation sur WhatsApp. C'est par là que vous recevrez votre accès dès l'ouverture du générateur PCT.
+          </p>
           <div class="bienvenue-actions">
-            <button type="button" id="btnCreerPremiereFiche" class="btn btn-terracotta">
-              <span>Créer ma première fiche</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </button>
-            <a href="#plans" class="lien-plans-payants" id="lienRetourPlans">Voir les plans payants</a>
+            <a id="btnConfirmerWhatsApp" href="#" class="btn btn-whatsapp btn-large" target="_blank" rel="noopener">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              <span>Confirmer sur WhatsApp</span>
+            </a>
           </div>
         </div>
 
@@ -532,84 +369,50 @@
   </main>
 
   <!-- ==========================================================================
-       MODALE D'INFORMATION : "CETTE FONCTION ARRIVE BIENTÔT"
-       ========================================================================== -->
-  <div id="modaleBientot" class="modale-overlay" role="dialog" aria-modal="true" aria-labelledby="titreModaleBientot">
-    <div class="modale-boite">
-      <div class="modale-icone">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <polyline points="12 6 12 12 16 14"></polyline>
-        </svg>
-      </div>
-      <h3 id="titreModaleBientot" class="modale-titre">Cette fonction arrive bientôt</h3>
-      <p class="modale-texte">
-        Le générateur direct de fiches pédagogiques de PCT est en cours de déploiement pour la rentrée. Vous recevrez un e-mail dès son ouverture officielle.
-      </p>
-      <button type="button" id="btnFermerModale" class="btn btn-terracotta">
-        Compris
-      </button>
-    </div>
-  </div>
-
-  <!-- ==========================================================================
-       PIED DE PAGE (FOOTER AVEC LIEN DISCRET "NOUS CONTACTER")
+       PIED DE PAGE
        ========================================================================== -->
   <footer class="footer">
     <div class="container">
-      
       <div class="grille-footer">
         <div class="footer-presentation">
           <a href="#" class="logo">
-            <img src="logo.png" alt="Logo ProfÉclair" class="logo-image">
+            <img src="logo-96.png" alt="" class="logo-image" width="38" height="38" loading="lazy">
             <span>ProfÉclair</span>
           </a>
-          <p>
-            Plateforme de préparation pédagogique dédiée aux enseignants du secondaire au Bénin. Simplifiez vos fiches de cours, interrogations et devoirs de la 6<sup>e</sup> à la Terminale.
-          </p>
+          <p>Fiches pédagogiques, interrogations et devoirs pour les enseignants du secondaire au Bénin, de la 6<sup>e</sup> à la Terminale.</p>
         </div>
 
         <div>
-          <h4 class="titre-colonne-footer">Matières & Niveaux</h4>
+          <h3 class="titre-colonne-footer">Matières</h3>
           <ul class="liens-footer">
-            <li><span>PCT (Physique, Chimie & Technologie)</span></li>
-            <li><span>Mathématiques (En cours de finalisation)</span></li>
-            <li><span>Collège (6<sup>e</sup>, 5<sup>e</sup>, 4<sup>e</sup>, 3<sup>e</sup>)</span></li>
-            <li><span>Lycée (2<sup>nde</sup>, 1<sup>ère</sup>, Terminale)</span></li>
+            <li>PCT (Physique, Chimie et Technologie)</li>
+            <li>Mathématiques (en préparation)</li>
           </ul>
         </div>
 
         <div>
-          <h4 class="titre-colonne-footer">Assistance & Échanges</h4>
+          <h3 class="titre-colonne-footer">Liens utiles</h3>
           <ul class="liens-footer">
-            <li><a href="#comment-ca-marche">Guide de démarrage</a></li>
-            <li><a href="#plans">Tarifs et formules</a></li>
-            <li>
-              <!-- "Nous contacter" reste présent mais discret dans le pied de page -->
-              <a href="mailto:contact@profeclair.bj" class="lien-contact-discret" id="lienNousContacter">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-                <span>Nous contacter</span>
-              </a>
-            </li>
-            <li><span>République du Bénin</span></li>
+            <li><a href="#comment-ca-marche">Comment ça marche</a></li>
+            <li><a href="#plans">Tarifs</a></li>
+            <li><a href="#faq">Questions fréquentes</a></li>
+            <li><a href="#" id="lienContactWhatsApp" target="_blank" rel="noopener">Nous écrire sur WhatsApp</a></li>
+            <li><a href="mailto:contact@profeclair.bj" id="lienNousContacter">Nous écrire par e-mail</a></li>
           </ul>
         </div>
       </div>
 
       <div class="bas-footer">
-        <div>
-          &copy; ProfÉclair. Tous droits réservés. Conçu pour les enseignants du secondaire.
-        </div>
-        <div>
-          Optimisé pour smartphone et ordinateur.
-        </div>
+        <span>&copy; ProfÉclair. Tous droits réservés.</span>
+        <span>République du Bénin</span>
       </div>
-
     </div>
   </footer>
+
+  <!-- Barre d'action fixe en bas de l'écran (téléphone uniquement) -->
+  <div id="barreMobile" class="barre-mobile">
+    <a href="#inscription" class="btn btn-terracotta btn-declencheur-plan" data-plan="gratuit">Réserver mon accès anticipé</a>
+  </div>
 
   <script src="script.js"></script>
 </body>
