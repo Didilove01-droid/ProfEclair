@@ -1,0 +1,18 @@
+# Clés secrètes et variables d'environnement
+.env
+.env.local
+.env.*.local
+*.env
+
+# Dépendances (si ajoutées plus tard)
+node_modules/
+
+# Fichiers temporaires et logs
+*.log
+npm-debug.log*
+
+# Fichiers système ou d'éditeurs
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
